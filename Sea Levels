@@ -1,0 +1,28 @@
+#Import the boxplot function and xlabel and ylabel functions
+from matplotlib.pyplot import boxplot, xlabel, ylabel
+
+#Make a list of the size of each sea level by sample in meters
+Coral_A_hyacinthus = [17,25,10,25,19,26,28]
+
+Coral_P_damicornis = [40,35,20,44,15,40,38]
+
+Coral_S_Pistillata = [2,15,30,60,33,5,60]
+
+Coral_Verrucosa = [5,4,10,8,5,9,9]
+
+treatment_coralsealevels = [5,4,10,8,5,9,9]
+
+#Put these lists together into a list of lists so we have two columns of data
+data = [Coral_A_hyacinthus,Coral_P_damicornis,Coral_S_Pistillata,Coral_Verrucosa]
+
+#Make a list of strings to represent the labels for each column
+species = ["A.hyacinthus","P.damicornis","S.Pisttilata","P.Verrucosa"]
+
+#Draw the boxplot
+boxplot(data,labels=species)
+
+#Label the y-axis
+ylabel("Sea Level (+0.1m)")
+
+#Label the x-axis
+xlabel("Species")
