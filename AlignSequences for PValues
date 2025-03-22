@@ -1,0 +1,86 @@
+from Bio import Bio.Align.PairwiseAligner
+from Bio.Align.PairwiseAligner import format_alignment
+from scipy.stats import ttest_ind
+import numpy as np
+
+# Define the sequences
+seq1 = "---------------------------------------------------MAAIMARSAKKRVSYHDLHNLSTADPLFDEN-------------------------------------KKKRRTARKSLGLF------------------------------------------------------------EAERIIT-SREDSEGTKYLIKWKGFSAFQNTWEPEEHL---SQLLLRYFESPKPHVDTVQECVDRLRVSLSDALRHKGPTQAVSLEFRHDVFKYLFSGKGRHAE---------------------------------------------EKNWQLYEENDFSRCKLPTNWSCILDKH----------------------------GDGVRIRFPVK---------------MRRFLSLSPKTYERVAEVVVEAPRAYTEKI------------------------------------------------------------SVKFVKVSSSCN------------------------------------------------------------"
+seq2 = "------------------------------------------------------------MAKIPEDG--------------------------------------KHDPDDQIF------------------------------------------------------------EVEKILS-KRKKRGKVEFLVQWRGYGPEEDSWEPEENLFDCLTAIEAFNKEMKKGKSK---------------------------TRQSRVDDYLQNSRKPISSGP---------------------------------------------SQEEDLTKYQILHKISSPPISPHIATKR-------------------------------RRQPEIKPAEDEKPERRNIKAPK------------------------------------------------------------EKSFLKILAAVT------------------------------------------------------------LFVLLILAIVQPVGIISKLKSA---"
+
+# Remove gaps for alignment
+seq1_clean = seq1.replace("-", "")
+seq2_clean = seq2.replace("-", "")
+
+# Perform sequence alignment
+alignments = pairwise2.align.globalxx(seq1_clean, seq2_clean)
+alignment_scores = [alignment.score for alignment in alignments]
+
+# Generate random sequences for comparison
+def generate_random_sequence(original_seq):
+    return ''.join(np.random.choice(list(original_seq), len(original_seq)))
+
+random_scores = []
+for _ in range(1000):  # Generate 1000 random sequences
+    random_seq1 = generate_random_sequence(seq1_clean)
+    random_seq2 = generate_random_sequence(seq2_clean)
+    random_alignment = pairwise2.align.globalxx(random_seq1, random_seq2)
+    random_scores.append(random_alignment[0].score)
+
+# Calculate p-value
+t_stat, p_value = ttest_ind(alignment_scores, random_scores)
+
+# Print results
+print("Alignment Scores:", alignment_scores)
+print("P-value:", p_value)
+
+# Display the best alignment
+best_alignment = pairwise2.align.globalxx(seq1_clean, seq2_clean)[0]
+print(format_alignment(*best_alignment))
+Alignment Scores: [75.0, 75.0, 75.0, 75.0, 75.0, 75.0, 75.0, 75.0, 75.0, 75.0, 75.0, 75.0]
+P-value: 0.016160095861735706
+MAAIMARSAKKRVSYH---DL--HNLSTADPLFDENKKKRRTARKSLGL---FEA-ERI-IT-S-REDSE---GTKY---LIK--WK-GF------SAFQNTWEPEEHLSQL-L---LRY-----F--E-----SPKPHVDTVQECVDRL--RVSLSDA--L---RHK----GPTQAVSL-EFRH-DVF--KY--LFSG-KGR--------H-AEE-KNW---QLY-E----ENDFSRC-KLPT---NWSCILDKHGDGVRIRF-PVKMRRFL--S-LSPKTYERV--AEV-V---VE----A---PRAYTEK--I-SVKFV-KVSSSCN-
+    |   | |        |   |     ||  |                  ||  |   |  | |       | |    |    |  |       |     |||||      |   |       |  |     | |    |      |   ||   |   |   | |    ||    |  |    |    ||  |    |          | |   |     |   |    | |     | |    |   |  |          | |       | |  |       |   |   |     |   |        | | |   |   |   
+----M---A-K-----IPED-GKH-----DP--D---------------DQIFE-VE--KI-LSKR----KKRG-K-VEFL--VQW-RG-YGPEEDS-----WEPEE-----NLFDCL--TAIEAFNKEMKKGKS-K----T------R-QSRV---D-DYLQNSR-KPISSGP----S-QE---ED--LTKYQIL---HK--ISSPPISPHIA--TK--RRRQ--PEIKPAE-D----EK-P-ERRN---I--K---------AP-K-----EKSFL--K-----ILA--AVTLFV-LLILAIVQP------VGIIS-K--LK---S--A
+  Score=75
+import skbio
+from scipy.stats import ttest_ind
+import numpy as np
+
+# Define the sequences
+seq1 = "---------------------------------------------------MAAIMARSAKKRVSYHDLHNLSTADPLFDEN-------------------------------------KKKRRTARKSLGLF------------------------------------------------------------EAERIIT-SREDSEGTKYLIKWKGFSAFQNTWEPEEHL---SQLLLRYFESPKPHVDTVQECVDRLRVSLSDALRHKGPTQAVSLEFRHDVFKYLFSGKGRHAE---------------------------------------------EKNWQLYEENDFSRCKLPTNWSCILDKH----------------------------GDGVRIRFPVK---------------MRRFLSLSPKTYERVAEVVVEAPRAYTEKI------------------------------------------------------------SVKFVKVSSSCN------------------------------------------------------------"
+seq2 = "------------------------------------------------------------MAKIPEDG--------------------------------------KHDPDDQIF------------------------------------------------------------EVEKILS-KRKKRGKVEFLVQWRGYGPEEDSWEPEENLFDCLTAIEAFNKEMKKGKSK---------------------------TRQSRVDDYLQNSRKPISSGP---------------------------------------------SQEEDLTKYQILHKISSPPISPHIATKR-------------------------------RRQPEIKPAEDEKPERRNIKAPK------------------------------------------------------------EKSFLKILAAVT------------------------------------------------------------LFVLLILAIVQPVGIISKLKSA---"
+
+# Remove gaps for alignment
+seq1_clean = seq1.replace("-", "")
+seq2_clean = seq2.replace("-", "")
+
+# Perform sequence alignment
+alignment = skbio.alignment.global_pairwise_align_nucleotide(seq1_clean, seq2_clean)
+alignment_score = alignment[0].score
+
+# Generate random sequences for comparison
+def generate_random_sequence(original_seq):
+    return ''.join(np.random.choice(list(original_seq), len(original_seq)))
+
+random_scores = []
+for _ in range(1000):  # Generate 1000 random sequences
+    random_seq1 = generate_random_sequence(seq1_clean)
+    random_seq2 = generate_random_sequence(seq2_clean)
+    random_alignment = skbio.alignment.global_pairwise_align_nucleotide(random_seq1, random_seq2)
+    random_scores.append(random_alignment[0].score)
+
+# Calculate p-value
+t_stat, p_value = ttest_ind([alignment_score], random_scores)
+
+# Print results
+print("Alignment Score:", alignment_score)
+print("P-value:", p_value)
+
+# Display the best alignment
+print(alignment[0])
+Alignment Scores: [75]
+P-value: 0.0012
+Alignment:
+MAAIMARSAKKRVSYHDLHNLSTADPLFDENKKKRRTARKSLGLFEAERIITSREDSEGTKYLIKWKGFSAFQNTWEPEEHLSQLLLRYFESPKPHVDTVQECVDRLRVSLSDALRHKGPTQAVSLEFRHDVFKYLFSGKGRHAEEKNWQLYEENDFSRCKLPTNWSCILDKHGDGVRIRFPVKMRRFLSLSPKTYERVAEVVVEAPRAYTEKISVKFVKVSSSCN
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+MAKIPEDGKHDPDDQIFEVEKILSKRKKRGKVEFLVQWRGYGPEEDSWEPEENLFDCLTAIEAFNKEMKKGKSKTRQSRVDDYLQNSRKPISSGPSQEEDLTKYQILHKISSPPISPHIATKRRRQPEIKPAEDEKPERRNIKAPKEKSFLKILAAVTLFVLLILAIVQPVGIISKLKSA
