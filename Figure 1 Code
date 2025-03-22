@@ -1,0 +1,67 @@
+#Define the sequences
+protein_seq_SP = "---------------------------------------------------MAAIMARSAKKRVSYHDLHNLSTADPLFDEN-------------------------------------KKKRRTARKSLGLF------------------------------------------------------------EAERIIT-SREDSEGTKYLIKWKGFSAFQNTWEPEEHL---SQLLLRYFESPKPHVDTVQECVDRLRVSLSDALRHKGPTQAVSLEFRHDVFKYLFSGKGRHAE---------------------------------------------EKNWQLYEENDFSRCKLPTNWSCILDKH----------------------------GDGVRIRFPVK---------------MRRFLSLSPKTYERVAEVVVEAPRAYTEKI------------------------------------------------------------SVKFVKVSSSCN------------------------------------------------------------"
+# Remove gaps for alignment
+seqSP_clean = protein_seq_SP.replace("-", "")
+seqDG_clean = protein_seq_DG.replace("-", "")
+print(seqSP_clean)
+gene_lengthSP =len(seqSP_clean)   
+print("The length of the sequene is:",gene_lengthSP)
+# PRINT: MAAIMARSAKKRVSYHDLHNLSTADPLFDENKKKRRTARKSLGLFEAERIITSREDSEGTKYLIKWKGFSAFQNTWEPEEHLSQLLLRYFESPKPHVDTVQECVDRLRVSLSDALRHKGPTQAVSLEFRHDVFKYLFSGKGRHAEEKNWQLYEENDFSRCKLPTNWSCILDKHGDGVRIRFPVKMRRFLSLSPKTYERVAEVVVEAPRAYTEKISVKFVKVSSSCN
+The length of the sequene is: 226
+
+protein_seq_DG = "--------------------------------------------------------------------------MAKIPEDG------------------------------------------KHDPDDQIF-----------------------------------------------------------------------------------------------------------------EVEKILS-KRKKRGKVEFLVQWRGYGPEEDSWEPEENLFDCLTAIEAFNKEMKKGKSK---------------------------TRQSRVDDYLQNSRKPISSGP-----------------------------------------------------SQEEDLTKYQILHKISSPPISPHIATKR---------------------------------------------------------------RRQPEIKPAEDEKPERRNIKAPK-------------------------------------------------------------------------------------------------------------------EKSFLKILAAVT---------------------------------------------------------------------------------------------------------------------------------------------LFVLLILAIVQPVGIISKLKSA---"
+# Remove gaps for alignment
+seqDG_clean = protein_seq_DG.replace("-", "")
+print(seqDG_clean)
+gene_lengthDG =len(seqDG_clean)   
+print("The length of the sequene is:",gene_lengthDG)
+# PRINT: MAKIPEDGKHDPDDQIFEVEKILSKRKKRGKVEFLVQWRGYGPEEDSWEPEENLFDCLTAIEAFNKEMKKGKSKTRQSRVDDYLQNSRKPISSGPSQEEDLTKYQILHKISSPPISPHIATKRRRQPEIKPAEDEKPERRNIKAPKEKSFLKILAAVTLFVLLILAIVQPVGIISKLKSA
+The length of the sequene is: 180
+
+protein_seq_AMur = "------------------------------------------------MKHFVDPNDRPIEPPSNDVLDDPFLSEEDLPDDSFE----HPTSPDSEPESNEASLPHV----QPAPAAEPNTQSASLIDNQTVF-----------------------------------------------------------------------------------------------------------------NAEKLLDTRTLDDGSIQYLVKWTNYPLNEATWGPASNILE-PRLLEDFLSWTTASA------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+# Remove gaps for alignment
+seqAMUR_clean = protein_seq_AMur.replace("-", "")
+print(seqAMUR_clean)
+gene_lengthAMUR =len(seqAMUR_clean)   
+print("The length of the sequene is:",gene_lengthAMUR)
+# PRINT: MKHFVDPNDRPIEPPSNDVLDDPFLSEEDLPDDSFEHPTSPDSEPESNEASLPHVQPAPAAEPNTQSASLIDNQTVFNAEKLLDTRTLDDGSIQYLVKWTNYPLNEATWGPASNILEPRLLEDFLSWTTASA
+The length of the sequene is: 132
+
+protein_seq_AMil = "------------------------------------------------MKPFVDPALRPIEPPSNDDPSEPYLDESDIPADSFESSKSHSHNSDTSVTIENNTRTQISSQGQPDAPDQRKDDNQAVIDNQTIF-----------------------------------------------------------------------------------------------------------------AAEKILK-RRKRKGKVQYKVKWLNYPISQSTWEPEENILD-RRLIESFEHRDQQGANRR------------------------------------------------------------------"
+# Remove gaps for alignment
+seqAMil_clean = protein_seq_AMil.replace("-", "")
+print(seqAMil_clean)
+gene_lengthAMil =len(seqAMil_clean)   
+print("The length of the sequene is:",gene_lengthAMil)
+# PRINT: MKPFVDPALRPIEPPSNDDPSEPYLDESDIPADSFESSKSHSHNSDTSVTIENNTRTQISSQGQPDAPDQRKDDNQAVIDNQTIFAAEKILKRRKRKGKVQYKVKWLNYPISQSTWEPEENILDRRLIESFEHRDQQGANRR
+The length of the sequene is: 142
+
+protein_seq_PD = "---------------------------------------------------------------------MASVRSPLSSES----------------------------------------------EGELY-----------------------------------------------------------------------------------------------------------------EVEKLLG-KRTHNGKVEYLIRWKGCRKEDDSWEPVKNLKGCQPLIKHFNKTRSPSPGRKAKT-----------------------PKKSQVIQKVQT--------------------------------------------------------------TTTPKVEEYTKLKTPSTQSSDFVILHRK---------------------------KG-PITYKQETK-----------------------EEKEVEITTKT-DTVGEIKIEEKKPIAEEEPS---------------------KPLP--------------------------------------------------EEKTTAVAVNA---------------------RKEVLKVFAALV-------------------------------------------------------------------------------------------VLTF-------------FILI-----------------------------LFSFFRVVGDK---"
+# Remove gaps for alignment
+seqPD_clean = protein_seq_PD.replace("-", "")
+print(seqPD_clean)
+gene_lengthPD =len(seqPD_clean)   
+print("The length of the sequene is:",gene_lengthPD)
+# PRINT: MASVRSPLSSESEGELYEVEKLLGKRTHNGKVEYLIRWKGCRKEDDSWEPVKNLKGCQPLIKHFNKTRSPSPGRKAKTPKKSQVIQKVQTTTTPKVEEYTKLKTPSTQSSDFVILHRKKGPITYKQETKEEKEVEITTKTDTVGEIKIEEKKPIAEEEPSKPLPEEKTTAVAVNARKEVLKVFAALVVLTFFILILFSFFRVVGDK
+The length of the sequene is: 206
+
+protein_seq_Xe = "MASSLLKEMVKKECLNQSQTDTDGSSVVAQSTGQVPKRVDASGAEVSIAQTNIFNYDFVPSTKRSNQIMKPMEARSPLVETQLQLSQNQPTVPHSSISPSMNSLSKDYL--VPQCLQHQMFAAQGYNATGQVFSTPMIPPVLVQAPITGPTSIPGVFQPGFMYQTFNEQKAYQGKSHYFAPFTKGSLIVLSNGGVKPIEDLKTTDFIESAKVSKQFYLETCKIAKIQETPNSSIMWIAFAVENIEKEVDEIVGRRRTKDGREDFLVRWQDYPPFSTTWEPIQNFTNCQEAIQEYFSKHWPIPGLKAKTVVHLSQQQQYPKKELITLKALPANKRNKILRGVREDLKKEILRHHQERNFCPGSTDYKGSSSLKGSIMGKSNQIFNYDRGLRNRKILSKNQKYSEEYTGTPKGLKSTTMGKTGRSNGEVLIADRKHYVSALASDENGEDSGISMNTVLKSQSRGRPTRNKKQLRTTDSLPGHDDVEHQDKLLVNVKMEYQEKQENKKT-QRISKVRRKKKKRLNGLTHSSQKNRIIIDNQELLLSSRLTRRTLPNYSSNCVLEEELVVTNKDGCLFIKICNESKKNVINRQICEDLISAFHDAGKDDVSCVVISCAGSTFTYGWDLDQFRNISHAERRELLQKYRLLTRLLVTCPKPLIAAVNGPTAGFGLSLIALCDMVFASEKATFQTKFVEWGHPPVGCCSLTLPHLFGHSQAMSVILCNTKLDCDMAKERGIVTEVLSFKDFEEELNSRLARFSLVSRQCLRDTKTLMVSGNIQELEDKNHEECDLFQKYISNDDILDGIVRRWWTSLQE"
+# Remove gaps for alignment
+seqXe_clean = protein_seq_Xe.replace("-", "")
+print(seqXe_clean)
+gene_lengthXe =len(seqXe_clean)   
+print("The length of the sequene is:",gene_lengthXe)
+# PRINT: MASSLLKEMVKKECLNQSQTDTDGSSVVAQSTGQVPKRVDASGAEVSIAQTNIFNYDFVPSTKRSNQIMKPMEARSPLVETQLQLSQNQPTVPHSSISPSMNSLSKDYLVPQCLQHQMFAAQGYNATGQVFSTPMIPPVLVQAPITGPTSIPGVFQPGFMYQTFNEQKAYQGKSHYFAPFTKGSLIVLSNGGVKPIEDLKTTDFIESAKVSKQFYLETCKIAKIQETPNSSIMWIAFAVENIEKEVDEIVGRRRTKDGREDFLVRWQDYPPFSTTWEPIQNFTNCQEAIQEYFSKHWPIPGLKAKTVVHLSQQQQYPKKELITLKALPANKRNKILRGVREDLKKEILRHHQERNFCPGSTDYKGSSSLKGSIMGKSNQIFNYDRGLRNRKILSKNQKYSEEYTGTPKGLKSTTMGKTGRSNGEVLIADRKHYVSALASDENGEDSGISMNTVLKSQSRGRPTRNKKQLRTTDSLPGHDDVEHQDKLLVNVKMEYQEKQENKKTQRISKVRRKKKKRLNGLTHSSQKNRIIIDNQELLLSSRLTRRTLPNYSSNCVLEEELVVTNKDGCLFIKICNESKKNVINRQICEDLISAFHDAGKDDVSCVVISCAGSTFTYGWDLDQFRNISHAERRELLQKYRLLTRLLVTCPKPLIAAVNGPTAGFGLSLIALCDMVFASEKATFQTKFVEWGHPPVGCCSLTLPHLFGHSQAMSVILCNTKLDCDMAKERGIVTEVLSFKDFEEELNSRLARFSLVSRQCLRDTKTLMVSGNIQELEDKNHEECDLFQKYISNDDILDGIVRRWWTSLQE
+The length of the sequene is: 809
+
+#In the scipy package, find the stats module, and import the ttest_ind function from it
+from scipy.stats import ttest_ind
+
+#Make a list of the sspecies type and nucleotides content 
+wild_coral_seq_length = [132,142,180]
+
+control_coral_seq_length = [226,204,809]
+
+#Run a t-test on the results
+ttest_ind(wild_coral,control_coral)
+# PRINT: TtestResult(statistic=-5.062479618487205, pvalue=0.00027866156007151557, df=12.0)
