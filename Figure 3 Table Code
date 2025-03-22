@@ -1,0 +1,72 @@
+
+#In the scipy package, find the stats module, and import the ttest_ind function from it
+from scipy.stats import ttest_ind
+
+#Make a list of the size of each sea level by sample in meters
+wild_coral = [17,25,10,25,19,26,28,10]
+
+control_coral = [40,35,20,44,15,40,38]
+
+#Run a t-test on the results
+ttest_ind(wild_coral,control_coral)
+# PRINT: TtestResult(statistic=-2.7595887457829145, pvalue=0.016237559810138327, df=13.0)
+
+#In the scipy package, find the stats module, and import the ttest_ind function from it
+from scipy.stats import ttest_ind
+
+#Make a list of the size of each sea level by sample in meters
+wild_coral = [2,15,30,60,33,5,60]
+
+control_coral = [40,35,20,44,15,40,38]
+
+#Run a t-test on the results
+ttest_ind(wild_coral,control_coral)
+# PRINT: TtestResult(statistic=-0.3866227328864419, pvalue=0.7058038461198167, df=12.0)
+
+#In the scipy package, find the stats module, and import the ttest_ind function from it
+from scipy.stats import ttest_ind
+
+#Make a list of the size of each sea level by sample in meters
+wild_coral = [17,25,10,25,19,26,28,10]
+
+control_coral = [5,4,10,8,5,9,9]
+
+#Run a t-test on the results
+ttest_ind(wild_coral,control_coral)
+# PRINT: TtestResult(statistic=4.507591281453628, pvalue=0.0005890518219609553, df=13.0)
+
+#In the scipy package, find the stats module, and import the ttest_ind function from it
+from scipy.stats import ttest_ind
+
+#Make a list of the size of each sea level by sample in meters
+wild_coral = [2,15,30,60,33,5,60]
+
+control_coral = [5,4,10,8,5,9,9]
+
+#Run a t-test on the results
+ttest_ind(wild_coral,control_coral)
+# PRINT: TtestResult(statistic=2.43458834194548, pvalue=0.03146757397283186, df=12.0)
+
+#In the scipy package, find the stats module, and import the ttest_ind function from it
+from scipy.stats import ttest_ind
+
+#Make a list of the size of each sea level by sample in meters
+wild_coral = [10,17,10,8,18,9,16]
+
+control_coral = [5,4,10,8,5,9,9]
+
+#Run a t-test on the results
+ttest_ind(wild_coral,control_coral)
+# PRINT:TtestResult(statistic=2.946415233033338, pvalue=0.012225381481650264, df=12.0)
+
+#In the scipy package, find the stats module, and import the ttest_ind function from it
+from scipy.stats import ttest_ind
+
+#Make a list of the size of each sea level by sample in meters
+wild_coral = [10,15,10,11,13,12,10]
+
+control_coral = [40,35,20,44,15,40,38]
+
+#Run a t-test on the results
+ttest_ind(wild_coral,control_coral)
+# PRINT:TtestResult(statistic=-5.062479618487205, pvalue=0.00027866156007151557, df=12.0)
